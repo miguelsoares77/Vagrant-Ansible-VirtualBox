@@ -2,13 +2,13 @@
     become: yes
     tasks:
     - name: install prerequisites
-    apt:
-        name:
-        - apt-transport-https
-        - ca-certificates 
-        - curl 
-        - gnupg-agent
-        - software-properties-common
+        apt:
+            name:
+            - apt-transport-https
+            - ca-certificates 
+            - curl 
+            - gnupg-agent
+            - software-properties-common
     - name: add apt-key
     apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
@@ -23,4 +23,4 @@
         - containerd.io
         update_cache: yes
     - name: add userpermissions
-    shell: "usermod -aG docker vagrant"
+        shell: "usermod -aG docker vagrant"
